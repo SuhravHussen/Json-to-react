@@ -3,8 +3,9 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import sampleData from "../sampleData/sampleData.json";
+
 import propsMaker from "./PropsMaker";
+import { store } from "../app/store";
 
 const componentMapper = {
   Section: "section",
@@ -18,7 +19,8 @@ const componentMapper = {
 };
 
 export default function renderer(id) {
-  const elementData = sampleData.data[id];
+  const sampleData = store.getState().components.data;
+  const elementData = sampleData?.data[id];
 
   const className =
     elementData.settings?.className || elementData.settings?.general?.className;
