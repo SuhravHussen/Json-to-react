@@ -55,6 +55,7 @@ export default function Editvalues() {
         type="text"
         name=""
         id=""
+        placeholder="ex : 58df380b-0827-44ec-aee6-9a7b94752e1a"
         value={elementId}
         onChange={(e) => setElementId(e.target.value)}
       />
@@ -68,6 +69,7 @@ export default function Editvalues() {
         type="text"
         name=""
         id=""
+        placeholder="ex : Hello World"
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
@@ -81,6 +83,7 @@ export default function Editvalues() {
         type="text"
         name=""
         id=""
+        placeholder="ex : red"
         value={color}
         onChange={(e) => setColor(e.target.value)}
       />
@@ -94,6 +97,7 @@ export default function Editvalues() {
         type="text"
         name=""
         id=""
+        placeholder="ex : yellow"
         value={bgColor}
         onChange={(e) => setBgColor(e.target.value)}
       />
