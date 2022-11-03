@@ -6,12 +6,16 @@ import {
   setAllComponents,
   setLoading,
 } from "./features/Slices/allComponentsSlicer";
-import RenderedFromJson from "./RenderedFromJson";
-import Editvalues from "./Editvalues";
+import InReactiveWay from "./Reactiveway/InReactiveWay";
+import "bootstrap/dist/css/bootstrap.min.css";
+// import RenderedFromJson from "./RenderedFromJson";
+// import Editvalues from "./Editvalues";
+// import Withoutjson from "./WithoutJson";
 
 function App() {
   const dispatch = useDispatch();
   const allComponentsData = useSelector((state) => state.components);
+
   useEffect(() => {
     dispatch(setLoading(true));
     dispatch(setAllComponents(sampleData));
@@ -20,8 +24,10 @@ function App() {
 
   return allComponentsData.data && !allComponentsData.loading ? (
     <>
-      <RenderedFromJson root={allComponentsData.data.rootNodeId} />
-      <Editvalues />
+      {/* <RenderedFromJson root={allComponentsData.data.rootNodeId} />
+      <Editvalues /> */}
+      {/* <Withoutjson/> */}
+      <InReactiveWay id={allComponentsData.data.rootNodeId} />
     </>
   ) : (
     <p>NO DATA</p>
